@@ -1,0 +1,10 @@
+{
+    "name": "apple/webserver",
+    "authors": [
+        {
+            "name": "Noureddine Latreche",
+            "email": "nourwushu@gmail.com"
+        }
+    ],
+    "require": {}
+}
