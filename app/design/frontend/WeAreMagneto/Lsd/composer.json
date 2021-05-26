@@ -1,0 +1,15 @@
+{
+  "name": "wam/lsd",
+  "description": "Landscaping Direct Store Theme",
+  "version": "0.10.0",
+  "license": "MIT",
+  "type": "magento2-theme",
+  "require": {
+    "magento/framework": "100.1.*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ]
+  }
+}

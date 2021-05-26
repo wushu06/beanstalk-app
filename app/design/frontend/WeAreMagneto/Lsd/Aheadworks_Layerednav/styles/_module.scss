@@ -1,0 +1,122 @@
+//
+//  Layered Navigation
+//  _____________________________________________
+
+// Filter arrows
+$filter-arrow-height                   : 13px !default;
+$filter-arrow-width                    : 13px !default;
+
+$filter-arrow-image                    : "../Aheadworks_Layerednav/images/down.png" !default;
+$filter-arrow-image-hover              : "../Aheadworks_Layerednav/images/down-hover.png" !default;
+
+$filter-arrow-active-image             : "../Aheadworks_Layerednav/images/up.png" !default;
+$filter-arrow-active-image-hover       : "../Aheadworks_Layerednav/images/up-hover.png" !default;
+
+// Slider range (available range)
+$aw-range-slider-background            :  $color-gray89 !default;
+$aw-range-slider-height                : 1px !default;
+$aw-range-slider-margin                : $indent__s 0 15px !default;
+
+// Slider range (selected range)
+$range-slider-background               : $color-gray19 !default;
+$range-slider-height                   : 3px !default;
+
+// Slider handle
+$range-slider-handle-background        : $color-gray19 !default;
+$range-slider-handle-border-radius     : 0 !default;
+$range-slider-handle-height            : 12px !default;
+$range-slider-handle-width             : 12px !default;
+
+.filter-options {
+    .filter-options-item {
+        .filter-options-title {
+            user-select: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &.active {
+            .arrow {
+                background-image: url($filter-arrow-active-image);
+
+                &:hover {
+                    background-image: url($filter-arrow-active-image-hover);
+                }
+            }
+        }
+
+        .arrow {
+            background-image: url($filter-arrow-image);
+            background-position: center center;
+            background-repeat: no-repeat;
+            float: right;
+            height: $filter-arrow-height;
+            width: $filter-arrow-width;
+
+            &:hover {
+                background-image: url($filter-arrow-image-hover);
+            }
+        }
+    }
+}
+
+.aw-layered-nav-popover__action {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: $indent__base;
+
+    @include min-screen($screen__m) {
+        margin: 0 0 ($indent__l - $indent__s);
+    }
+
+    .action.primary {
+        @include lib-button-as-link(
+            $_link-color: $color-dark-blue,
+            $_link-color-hover: $color-dark-blue,
+            $_disabled_opacity: 1,
+            $_margin: 0 0 $indent__s
+        );
+        @include lib-font-size(14px);
+        box-shadow: none;
+        font-weight: $font-weight__regular;
+        text-decoration: none;
+
+        &:active {
+            color: $color-dark-blue;
+        }
+
+        &[disabled] {
+            color: $color-alto;
+            text-decoration: none;
+        }
+
+        &:not([disabled]):hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.aw-ln-range-slider {
+    background: $aw-range-slider-background;
+    height: $aw-range-slider-height;
+    margin: $aw-range-slider-margin;
+
+    .ui-slider-range {
+        background: $range-slider-background;
+        height: $range-slider-height;
+        position: absolute;
+    }
+
+    .ui-slider-handle {
+        background: $range-slider-handle-background;
+        border-radius: $range-slider-handle-border-radius;
+        top: 50%;
+        transform: translateY(-50%);
+        height: $range-slider-handle-height;
+        width: $range-slider-handle-width;
+    }
+}

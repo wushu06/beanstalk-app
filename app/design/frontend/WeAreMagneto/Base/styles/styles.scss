@@ -1,0 +1,46 @@
+// Vendor libs
+@import '01-settings/magento-ui/variables'; // Magento UI variables
+@import '01-settings/variables/base'; // Theme variables
+@import '01-settings/variables/client'; // Client variables
+@import '01-settings/magento-ui/lib'; // Magento UI
+
+// Mixins
+@import '02-tools/mixins/media-queries';
+@import '02-tools/client-mixins';
+
+// Reset default styles with magento-reset
+@import '../web/vendor/normalize/lib'; // Normalize.css
+@import '../web/vendor/bootstrap/bootstrap-grid'; // Bootstrap grid
+@import '../web/vendor/slick/slick'; // Slick slider
+@import '03-generic/reset';
+
+// Elements
+@import '04-elements/imports';
+
+// Objects
+@import '05-objects/modals'; // from lib
+@import '05-objects/modals_extend'; // local
+@import '05-objects/layout';
+@import '05-objects/popups';
+@import '05-objects/loaders';
+@import '05-objects/messages';
+
+// Theme blocks
+@import '06-components/actions-toolbar';
+@import '06-components/breadcrumbs';
+@import '06-components/buttons';
+@import '06-components/extends';
+@import '06-components/forms';
+@import '06-components/icons';
+@import '06-components/navigation';
+@import '06-components/pages'; // Theme pager
+@import '06-components/price';
+@import '06-components/sections';
+@import '06-components/tables';
+@import '06-components/tooltips';
+@import '06-components/typography';
+@import '06-components/modules';
+@import '06-components/widgets';
+
+// Scopes
+@import '07-scopes/imports';

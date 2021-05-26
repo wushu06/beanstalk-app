@@ -1,0 +1,51 @@
+//
+//  Toolbar Sorter
+//  _____________________________________________
+
+.toolbar-sorter {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sorter-label {
+    display: inline-flex;
+    font-size: $sorter-label__font-size;
+    margin: $sorter-label__margin;
+}
+
+.sorter-options {
+    background: $sorter-options__background;
+    border: $sorter-options__border;
+    color: $sorter-options__color;
+    height: $sorter-options__height;
+    padding: $sorter-options__padding;
+    margin: $sorter-options__margin;
+    max-width: $sorter-options__max-width;
+    width: $sorter-options__width;
+}
+
+.sorter-action {
+    position: relative;
+
+    &:before {
+        background: url('../images/icons/triangle.svg') center center no-repeat;
+        background-size: cover;
+        content: "";
+        display: block;
+        height: 6px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+    }
+
+    &.sort-asc:before {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    span {
+        display: inline-block;
+        text-indent: -9999px;
+    }
+}

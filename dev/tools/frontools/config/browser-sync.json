@@ -1,0 +1,12 @@
+[
+  {
+    "proxy": "landscaping-direct.test",
+    "open": false,
+    "rewriteRules": [
+      {
+        "match": ".landscaping-direct.test",
+        "replace": ""
+      }
+    ]
+  }
+]

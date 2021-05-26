@@ -1,0 +1,4 @@
+.breadcrumbs {
+    @include lib-breadcrumbs();
+    padding: $breadcrumbs__container-padding;
+}

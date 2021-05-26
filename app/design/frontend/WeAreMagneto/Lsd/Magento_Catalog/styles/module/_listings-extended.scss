@@ -1,0 +1,23 @@
+//
+//  Product Lists Extended
+//  _____________________________________________
+
+@include category-listing(
+    $_page-layout: page-layout-2columns-right,
+    $_grid-item-margin: 0 0 $indent__l,
+    $_grid-item-margin-m: 0 0 ($indent__l * 2),
+    $_grid-items-per-row: $product-grid-items-per-row-layout-2-right-screen-s,
+    $_grid-items-per-row-s: $product-grid-items-per-row-layout-2-right-screen-s,
+    $_grid-items-per-row-m: $product-grid-items-per-row-layout-2-right-screen-m,
+    $_grid-items-per-row-l: $product-grid-items-per-row-layout-2-right-screen-l
+);
+
+@include category-listing(
+    $_page-layout: page-layout-2columns-left,
+    $_grid-item-margin: 0 0 $indent__l,
+    $_grid-item-margin-m: 0 0 ($indent__l * 2),
+    $_grid-items-per-row: $product-grid-items-per-row-layout-2-left-screen-s,
+    $_grid-items-per-row-s: $product-grid-items-per-row-layout-2-left-screen-s,
+    $_grid-items-per-row-m: $product-grid-items-per-row-layout-2-left-screen-m,
+    $_grid-items-per-row-l: $product-grid-items-per-row-layout-2-left-screen-l
+);

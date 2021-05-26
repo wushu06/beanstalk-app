@@ -1,0 +1,38 @@
+//
+//  Toolbar Filters
+//  _____________________________________________
+
+.toolbar-filters {
+    margin: 0;
+
+    @include min-screen($screen__m) {
+        display: none;
+    }
+
+    a {
+        @include lib-link(
+            $_link-color                   : $color-dark-blue,
+            $_link-text-decoration         : none,
+            $_link-color-visited           : $color-dark-blue,
+            $_link-text-decoration-visited : none,
+            $_link-color-hover             : $color-dark-blue,
+            $_link-color-active            : $color-dark-blue
+        );
+        font-size: $toolbar-amount__font-size;
+        position: relative;
+        padding-right: $indent__base;
+
+        &:before {
+            background: url('../images/icons/triangle.svg') center center no-repeat;
+            background-size: cover;
+            content: "";
+            display: block;
+            height: 6px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 8px;
+        }
+    }
+}

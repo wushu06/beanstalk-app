@@ -1,0 +1,458 @@
+//
+//  Variables
+//  _____________________________________________
+
+$minicart__border-color       : $color-gray80 !default;
+$minicart__padding-horizontal : $indent__base !default;
+
+$minicart-qty__height         : 24px !default;
+
+//
+//  Minicart
+//  ---------------------------------------------
+
+.block-minicart {
+    .items-total {
+        float: left;
+        margin: 0 $indent__s;
+
+        .count {
+            font-weight: $font-weight__bold;
+        }
+    }
+
+    .subtotal {
+        .label {
+            display: none;
+        }
+    }
+
+    .amount {
+        .price-wrapper {
+            &:first-child {
+                .price {
+                    @include lib-font-size(30);
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .subtitle {
+        display: none;
+
+        &.empty {
+            display: block;
+            font-size: 14px;
+            padding: $indent__l 0 $indent__base;
+            text-align: center;
+        }
+    }
+
+    .text {
+        &.empty {
+            text-align: center;
+        }
+    }
+
+    .block-content {
+        > .actions {
+            margin-top: 40px;
+            text-align: center;
+
+            .viewcart {
+                @include lib-link-as-button();
+                background: $color-river-bed;
+                border-color: $color-river-bed;
+                width: 100%;
+                margin-bottom: 25px;
+            }
+
+            .action.continue {
+                font-weight: 600;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .block-category-link,
+    .block-product-link,
+    .block-cms-link,
+    .block-banners {
+        margin: 15px 0 0;
+        text-align: center;
+    }
+}
+
+.minicart-added {
+    @include icon-after('tick-white');
+    @include lib-font-size(25);
+    font-family: $font-family__serif;
+    font-weight: 700;
+    margin: 0 0 30px;
+    padding-left: 43px;
+
+    &:after {
+        background-color: $color-laser;
+        background-size: 11px;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        top: 3px;
+    }
+}
+
+.minicart-total {
+    &__text {
+        @include lib-font-size(11);
+    }
+
+    &__count {
+        font-style: normal;
+        color: $color-gray-06;
+    }
+}
+
+.minicart-wrapper {
+    float: right;
+
+    .block-minicart {
+        padding: 50px;
+        right: -80%;
+        width: 320px;
+        z-index: 101;
+        position: fixed;
+        top: 0;
+        margin-top: 0;
+        border: none;
+        min-width: 80%;
+        height: 100%;
+        background: $page__background-color;
+        transition: right 200ms linear;
+        overflow: scroll;
+
+        .block-title {
+            display: none;
+        }
+
+        &:after {
+            display: none;
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+
+    //
+    // Desktop
+    //
+    @include min-screen($screen__m) {
+        .block-minicart {
+            min-width: 0;
+            width: 500px;
+            right: -500px;
+        }
+    }
+
+    &.active {
+        .block-minicart {
+            right: 0;
+        }
+    }
+
+    .product {
+        .actions {
+            float: right;
+            margin: -24px 0 0;
+            text-align: right;
+
+            > .primary,
+            > .secondary {
+                display: inline;
+            }
+        }
+    }
+
+    .action {
+        &.close {
+            @include lib-button-icon(
+                $icon-remove,
+                $_icon-font-size        : 32px,
+                $_icon-font-line-height : 32px,
+                $_icon-font-text-hide   : true
+            );
+            @include lib-button-reset();
+            height: 40px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+        }
+
+        &.showcart {
+            white-space: nowrap;
+            display: block;
+            height: 25px;
+            width: 25px;
+            background: url('../images/icons/basket-icon.svg') 50% 4px no-repeat transparent;
+            background-size: 12px;
+            position: relative;
+
+            .text {
+                @extend .abs-visually-hidden;
+            }
+
+            .counter.qty {
+                @include lib-font-size(10);
+                position: absolute;
+                top: -2px;
+                right: -5px;
+                background: $color-old-rose;
+                border-radius: 50%;
+                display: inline-block;
+                min-width: 18px;
+                overflow: hidden;
+                padding: 2px 0 1px;
+                text-align: center;
+                white-space: normal;
+                color: #fff;
+                line-height: 1.4;
+
+                &.empty {
+                    display: none;
+                }
+
+                .loader {
+                    > img {
+                        @include lib-css(max-width, $minicart-qty__height);
+                    }
+                }
+            }
+
+            .counter-label {
+                @extend .abs-visually-hidden;
+            }
+
+            &.active:before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: rgba($color-shark, 0.77);
+                height: 100%;
+                width: 100%;
+                z-index: 100;
+            }
+        }
+    }
+
+    .minicart-widgets {
+        margin-top: 15px;
+    }
+
+    //
+    // Desktop
+    //
+    @include min-screen($screen__m) {
+        .action.showcart {
+            background-position: 50% 50%;
+            background-size: 15px;
+        }
+    }
+}
+
+//
+// Mobile
+//
+@include max-screen($screen__m) {
+    body.is-minicart-open {
+        position: fixed;
+        overflow: hidden;
+    }
+}
+
+.minicart-items-wrapper {
+    @include lib-css(border, 1px solid $minicart__border-color);
+    @include lib-css(margin, 0 (-$minicart__padding-horizontal));
+    border-left: 0;
+    border-right: 0;
+    padding: 15px;
+    height: auto !important; // sass-lint:disable-line no-important : Override JS-added inline height
+}
+
+.minicart-items {
+    @include lib-list-reset-styles();
+
+    .product-item {
+        padding: $indent__base 0;
+
+        &:not(:first-child) {
+            @include lib-css(border-top, 1px solid $minicart__border-color);
+        }
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        > .product {
+            @extend .abs-add-clearfix;
+        }
+    }
+
+    .product-image-wrapper {
+        @extend .abs-reset-image-wrapper;
+    }
+
+    .product-item-pricing {
+        .label {
+            display: inline-block;
+            width: 4.5rem;
+        }
+    }
+
+    .price-minicart {
+        margin-bottom: $indent__xs;
+    }
+
+    .product {
+        > .product-item-photo,
+        > .product-image-container {
+            float: left;
+        }
+
+        .toggle {
+            @include lib-icon-font(
+                $_icon-font-content     : $icon-down,
+                $_icon-font-size        : 28px,
+                $_icon-font-line-height : 16px,
+                $_icon-font-text-hide   : false,
+                $_icon-font-position    : after,
+                $_icon-font-display     : block
+            );
+            cursor: pointer;
+            position: relative;
+
+            &:after {
+                position: static;
+                right: $indent__base;
+                top: 0;
+            }
+        }
+
+        &.active {
+            > .toggle {
+                @include lib-icon-font-symbol(
+                    $_icon-font-content  : $icon-up,
+                    $_icon-font-position : after
+                );
+            }
+        }
+    }
+
+    .product-item-name {
+        font-weight: $font-weight__regular;
+        margin: 0 0 $indent__s;
+
+        a {
+            @include lib-css(color, $link__color);
+        }
+    }
+
+    .product-item-details {
+        padding-left: 88px;
+
+        .price {
+            font-weight: $font-weight__bold;
+        }
+
+        .price-including-tax,
+        .price-excluding-tax {
+            margin: $indent__xs 0 0;
+        }
+
+        .weee[data-label] {
+            @include lib-font-size(11);
+            .label {
+                @extend .abs-no-display;
+            }
+        }
+
+        .details-qty {
+            margin-top: $indent__s;
+        }
+    }
+
+    .product.options {
+        .tooltip.toggle {
+            @include lib-icon-font(
+                $icon-down,
+                $_icon-font-size        : 28px,
+                $_icon-font-line-height : 28px,
+                $_icon-font-text-hide   : true,
+                $_icon-font-margin      : -3px 0 0 7px,
+                $_icon-font-position    : after
+            );
+
+            .details {
+                display: none;
+            }
+        }
+    }
+
+    .details-qty,
+    .price-minicart {
+        .label {
+            @extend .abs-colon;
+        }
+    }
+
+    .item-qty {
+        margin-right: $indent__s;
+        text-align: center;
+        width: 40px;
+    }
+
+    .update-cart-item {
+        @include lib-font-size(11);
+        vertical-align: top;
+    }
+
+    .subtitle {
+        display: none;
+    }
+
+    .action {
+        &.edit,
+        &.delete {
+            @include lib-icon-font(
+                $icon-settings,
+                $_icon-font-size         : 28px,
+                $_icon-font-line-height  : 28px,
+                $_icon-font-text-hide    : true,
+                $_icon-font-color        : $color-gray19,
+                $_icon-font-color-hover  : $color-gray19,
+                $_icon-font-color-active : $color-gray19
+            );
+        }
+
+        &.delete {
+            @include lib-icon-font-symbol(
+                $_icon-font-content : $icon-trash
+            );
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__xs) {
+    .minicart-wrapper .block-minicart {
+        width: 290px;
+    }
+}

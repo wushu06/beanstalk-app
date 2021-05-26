@@ -1,0 +1,10 @@
+//
+//  Select
+//  _____________________________________________
+
+$select__background                 : "../images/select-background.svg";
+
+select {
+    appearance: none;
+    background: $color-white url($select__background) 100% 0 no-repeat;
+}

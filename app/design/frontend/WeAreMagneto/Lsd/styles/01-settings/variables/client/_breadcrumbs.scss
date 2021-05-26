@@ -1,0 +1,15 @@
+//
+//  Breadcrumbs variables
+//  _____________________________________________
+
+$breadcrumbs__font-size                          : $font-size__base;
+$breadcrumbs__display                            : false;
+$breadcrumbs__container-margin                   : 0 auto;
+$breadcrumbs__container-padding                  : $indent__base;
+
+$breadcrumbs-current__color                      : $color-dark-blue;
+$breadcrumbs-current__font-weight                : 700;
+
+$breadcrumbs-icon__use                           : false;
+
+$breadcrumbs-separator__symbol                   : '/';

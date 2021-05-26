@@ -1,0 +1,200 @@
+//
+//  Variables
+//  _____________________________________________
+
+$autocomplete__background-color  : $color-gray-05 !default;
+$autocomplete__border            : 1px solid $form-element-input__border-color !default;
+$autocomplete-item__border       : 1px solid $color-gray90 !default;
+$autocomplete-item__hover__color : $color-gray91 !default;
+$autocomplete-item-amount__color : $color-gray60 !default;
+
+.block-search {
+    position: relative;
+    z-index: 1000;
+    background: $autocomplete__background-color;
+    margin-bottom: 0;
+
+    .block {
+        &-title {
+            display: none;
+        }
+    }
+
+    .block-content {
+        position: relative;
+        margin-bottom: 0;
+        max-width: $layout__max-width;
+        margin: 0 auto;
+    }
+
+    .form.minisearch.active {
+        min-height: 500px;
+        padding: 20px 0;
+    }
+
+    .label {
+        @include lib-visually-hidden();
+
+        &.active {
+            + .control {
+                input {
+                    position: static;
+                }
+            }
+        }
+    }
+
+    .action.search {
+        display: none;
+    }
+
+    .control {
+        clear: both;
+        padding: 0 15px;
+    }
+
+    input {
+        @include lib-font-size(30);
+        position: absolute;
+        left: -300%;
+        font-weight: 300;
+        text-align: center;
+        display: block;
+        margin: 15px auto 30px;
+        max-width: 820px;
+        border: none;
+        border-bottom: 1px solid $color-gray-04;
+        background: transparent;
+
+        &:focus {
+            outline: none;
+            border: none;
+            border-bottom: 1px solid $color-gray-04;
+            box-shadow: none;
+        }
+    }
+
+    .nested {
+        display: none;
+    }
+}
+
+.search-autocomplete {
+    @extend .abs-add-box-sizing;
+    display: none;
+    margin-top: -15px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+
+    ul {
+        @include lib-list-reset-styles();
+
+        li {
+            @include lib-css(border-top, $autocomplete-item__border);
+            cursor: pointer;
+            margin: 0;
+            padding: $indent__xs $indent__xl $indent__xs $indent__s;
+            position: relative;
+            text-align: left;
+            white-space: normal;
+
+            &:not(:empty) {
+                border-top: 0;
+                @include lib-css(border, $autocomplete__border);
+                @include lib-css(background, $autocomplete__background-color);
+            }
+
+            &:first-child {
+                border-top: none;
+            }
+
+            &:hover,
+            &.selected {
+                @include lib-css(background, $autocomplete-item__hover__color);
+            }
+
+            .amount {
+                @include lib-css(color, $autocomplete-item-amount__color);
+                position: absolute;
+                right: 7px;
+                top: $indent__xs;
+            }
+        }
+    }
+}
+
+.form.search.advanced {
+    .fields.range {
+        .field {
+            &:first-child {
+                position: relative;
+
+                .control {
+                    padding-right: 25px;
+
+                    &:after {
+                        content: ' \2013 ';
+                        display: inline-block;
+                        position: absolute;
+                        right: 0;
+                        text-align: center;
+                        top: 6px;
+                        width: 25px;
+                    }
+                }
+            }
+
+            &:last-child {
+                position: relative;
+
+                div.mage-error[generated] {
+                    left: 0;
+                    position: absolute;
+                    top: 32px;
+                }
+            }
+
+            &.with-addon {
+                .control {
+                    padding-right: 45px;
+                }
+            }
+        }
+    }
+
+    .group.price {
+        .addon {
+            .addafter {
+                background: none;
+                border: 0;
+                padding-top: 6px;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+}
+
+.search.summary {
+    margin-bottom: $indent__s;
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__m) {
+    .block-search {
+        .block-content {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include max-screen($screen__s) {
+    .block-search {
+        margin-top: $indent__s;
+    }
+}

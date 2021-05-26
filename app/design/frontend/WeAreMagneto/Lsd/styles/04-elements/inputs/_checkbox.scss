@@ -1,0 +1,60 @@
+//
+//  Checkbox
+//  _____________________________________________
+
+$checkbox__background                   : #fff;
+$checkbox__background-image             : "../images/icons/tick-white.svg";
+$checkbox__image-height                 : 6px;
+$checkbox__image-width                  : 8px;
+$checkbox__border                       : 1px solid $color-dark-blue;
+$checkbox__height                       : 20px;
+$checkbox__width                        : 20px;
+$checkbox__margin                       : 0 5px -5px 0;
+
+$checkbox-checked__background           : $color-dark-blue;
+
+$checkbox-disabled__background          : $color-alto;
+$checkbox-disabled__border              : 1px solid $color-alto;
+
+input[type="checkbox"] {
+    appearance: initial;
+    height: $checkbox__height;
+    margin: $checkbox__margin;
+    outline: 0;
+    width: $checkbox__width;
+
+    &:not([disabled]):focus {
+        box-shadow: none;
+    }
+}
+
+input[type="checkbox"]:before {
+    background: $checkbox__background;
+    border: $checkbox__border;
+    content: "";
+    display: block;
+    position: relative;
+    height: ($checkbox__height - 2px);
+    width: ($checkbox__width - 2px);
+}
+
+input[type="checkbox"]:checked:before {
+    background: $checkbox-checked__background;
+}
+
+input[type="checkbox"]:disabled:before {
+    background: $checkbox-disabled__background;
+    border: $checkbox-disabled__border;
+}
+
+input[type="checkbox"]:checked:after {
+    background-image: url($checkbox__background-image);
+    background-size: cover;
+    content: "";
+    display: block;
+    position: relative;
+    top: -12px;
+    left: 5px;
+    height: $checkbox__image-height;
+    width: $checkbox__image-width;
+}

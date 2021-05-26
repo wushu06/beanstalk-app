@@ -1,0 +1,72 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="store_switcher" remove="true"/>
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo-dark.svg</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="header">
+            <arguments>
+                <argument name="show_part" xsi:type="string">other</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="header.panel">
+            <block template="Lsd_Theme::header/links.phtml" name="lsd.header.links" />
+            <block template="Lsd_Theme::header/trustpilot.phtml" name="lsd.header.trustpilot" />
+        </referenceContainer>
+
+        <referenceContainer name="top.links" remove="true" />
+        <referenceContainer name="header-wrapper">
+            <container name="header-actions" htmlTag="div" htmlClass="header-actions">
+                <block template="Lsd_Theme::header/actions.phtml" name="lsd.header.actions" />
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="footer">
+            <block template="Lsd_Theme::footer/social.phtml" name="lsd.footer.social" />
+            <block template="Lsd_Theme::footer/links.phtml" name="lsd.footer.links">
+                <block class="Magento\Cms\Block\Block" name="cms.footer.links.1" as="footer-links-1">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-links-1</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="cms.footer.links.2" as="footer-links-2">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-links-2</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="cms.footer.links.3" as="footer-links-3">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-links-3</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="cms.footer.links.4" as="footer-links-4">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-links-4</argument>
+                    </arguments>
+                </block>
+            </block>
+            <block template="Lsd_Theme::footer/bottom.phtml" name="lsd.footer.bottom">
+                <block class="Magento\Cms\Block\Block" name="cms.footer.bottom.links" as="footer-bottom-links">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-bottom-links</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="cms.footer.note" as="footer-note">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-note</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+
+        <move element="copyright" destination="lsd.footer.bottom" />
+        <move element="minicart" destination="header-actions" />
+        <move element="navigation.sections" destination="header.container" />
+        <move element="top.search" destination="header.container" after="navigation.sections" />
+        <move element="form.subscribe" destination="footer-container" before="footer" />
+    </body>
+</page>

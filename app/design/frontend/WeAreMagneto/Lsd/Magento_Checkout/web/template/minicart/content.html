@@ -1,0 +1,81 @@
+<div class="block-title">
+    <strong>
+        <span class="text" translate="'My Cart'"/>
+        <span
+            class="qty empty"
+            text="getCartParam('summary_count')"
+            data-bind="css: { empty: !!getCartParam('summary_count') == false },
+                       attr: { title: $t('Items in Cart') }">
+        </span>
+    </strong>
+</div>
+
+<div class="block-content">
+    <div class="minicart-added js-cart-added" style="display:none">
+        <p translate="'Added to Bag'"></p>
+    </div>
+    <if args="getCartParam('summary_count')">
+        <strong class="subtitle" translate="'Recently added item(s)'"/>
+        <div data-action="scroll" class="minicart-items-wrapper">
+            <ol id="mini-cart" class="minicart-items" data-bind="foreach: { data: getCartItems(), as: 'item' }">
+                <each args="$parent.getRegion($parent.getItemRenderer(item.product_type))"
+                      render="{name: getTemplate(), data: item, afterRender: function() {$parents[1].initSidebar()}}"
+                />
+            </ol>
+        </div>
+    </if>
+
+    <if args="getCartParam('summary_count')">
+        <div class="minicart-total">
+            <p class="minicart-total__text"><span translate="'Your Total'"></span>
+                <em class="minicart-total__count">
+                    (<span text="getCartParam('summary_count')" />
+                    <!-- ko if: (getCartParam('summary_count') === 1) -->
+                        <span translate="'item'"/>)
+                    <!--/ko-->
+                    <!-- ko if: (getCartParam('summary_count') > 1) -->
+                        <span translate="'items'"/>)
+                    <!--/ko-->
+                </em>
+            </p>
+        </div>
+
+        <each args="getRegion('subtotalContainer')" render=""/>
+        <each args="getRegion('extraInfo')" render=""/>
+    </if>
+
+    <ifnot args="getCartParam('summary_count')">
+        <strong class="subtitle empty"
+                data-bind="visible: closeSidebar()"
+                translate="'You have no items in your shopping cart.'"
+        />
+        <if args="getCartParam('cart_empty_message')">
+            <p class="minicart empty text" text="getCartParam('cart_empty_message')"/>
+            <div class="actions">
+                <div class="secondary">
+                    <a class="action viewcart" data-bind="attr: {href: shoppingCartUrl}">
+                        <span translate="'View and Edit Cart'"/>
+                    </a>
+                </div>
+            </div>
+        </if>
+    </ifnot>
+
+    <div class="actions" if="getCartParam('summary_count')">
+        <a class="action primary viewcart" data-bind="attr: {href: shoppingCartUrl}">
+            <span translate="'View and Edit Cart'"/>
+        </a>
+        <p class="action continue">
+            <span>Or</span>
+            <a class="continue-link" href="javascript:void(0)" data-bind="{
+                click: closeMinicart,
+                i18n: 'Continue Shopping'
+            }"></a>
+        </p>
+    </div>
+
+    <div id="minicart-widgets" class="minicart-widgets" if="getRegion('promotion').length">
+        <each args="getRegion('promotion')" render=""/>
+    </div>
+</div>
+<each args="getRegion('sign-in-popup')" render=""/>

@@ -1,0 +1,40 @@
+//
+//  Toolbar
+//  _____________________________________________
+
+.toolbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: $toolbar__margin;
+
+    @include min-screen($screen__m) {
+        margin: -($indent__s) 0 $indent__base;
+
+        #layered-selected-filters-block + & {
+            margin-top: 0;
+        }
+    }
+}
+
+.toolbar ~ .toolbar .toolbar-sorter,
+.toolbar ~ .toolbar .toolbar-amount,
+.toolbar ~ .toolbar .toolbar-filters {
+    display: none;
+}
+
+.toolbar ~ .toolbar .pages {
+    display: block;
+}
+
+.toolbar ~ .toolbar {
+    @include max-screen($screen__s) {
+        justify-content: center;
+    }
+
+    .field.limiter {
+        @include min-screen($screen__s) {
+            display: flex;
+        }
+    }
+}

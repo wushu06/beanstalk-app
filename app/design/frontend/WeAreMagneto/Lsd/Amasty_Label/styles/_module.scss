@@ -1,0 +1,40 @@
+//
+//  Amasty Label
+//  _____________________________________________
+
+$am-label__background               : $color-dark-blue;
+$am-label__color                    : $color-white;
+$am-label__font-family              : $font-family__serif;
+$am-label__font-size                : $font-size__xs;
+$am-label__font-weight              : $font-weight__bold;
+$am-label__padding                  : $indent__xs $indent__s;
+
+$am-label__background--popular      : $color-riverbed;
+$am-label__background--sustainable  : $color-laurel;
+$am-label__background--new          : $color-old-rose;
+
+.amasty-label-text {
+    background: $am-label__background;
+    color: $am-label__color;
+    font-family: $am-label__font-family;
+    font-size: $am-label__font-size;
+    font-weight: $am-label__font-weight;
+    line-height: (15 / 11);
+    padding: $am-label__padding !important;
+    width: auto !important;
+
+    &[data-label="New"],
+    &[data-label="new"] {
+        background: $am-label__background--new;
+    }
+
+    &[data-label="Popular"],
+    &[data-label="popular"] {
+        background: $am-label__background--popular;
+    }
+
+    &[data-label="Sustainable"],
+    &[data-label="sustainable"] {
+        background: $am-label__background--sustainable;
+    }
+}

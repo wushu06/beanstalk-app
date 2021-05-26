@@ -1,0 +1,82 @@
+@mixin squiggle($size: 1) {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        background-size: contain;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-color: transparent;
+    }
+
+    @if $size == 1 {
+        &:after {
+            background-image: url('../images/squiggle-1.svg');
+            bottom: -7px;
+            left: -2px;
+            height: 12px;
+            width: 72px;
+        }
+    }
+}
+
+@mixin icon-after($name) {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url('../images/icons/#{$name}.svg') 50% 50% no-repeat transparent;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        z-index: 5;
+    }
+}
+
+@mixin category-listing(
+    $_page-layout,
+    $_grid-item-margin,
+    $_grid-item-margin-m,
+    $_grid-items-per-row,
+    $_grid-items-per-row-s,
+    $_grid-items-per-row-m,
+    $_grid-items-per-row-l
+) {
+    $_grid-items-per-row    : ($total-columns / $_grid-items-per-row);
+    $_grid-items-per-row-s  : ($total-columns / $_grid-items-per-row-s);
+    $_grid-items-per-row-m  : ($total-columns / $_grid-items-per-row-m);
+    $_grid-items-per-row-l  : ($total-columns / $_grid-items-per-row-l);
+
+    .#{$_page-layout} {
+        &.page-products {
+            .products-grid {
+                .product-items {
+                    @include make-row();
+                }
+
+                .product-item {
+                    @include make-col-ready();
+                    @include make-col($_grid-items-per-row);
+                    margin: $_grid-item-margin;
+
+                    @include min-screen($screen__s) {
+                        @include make-col($_grid-items-per-row-s);
+                    }
+
+                    @include min-screen($screen__m) {
+                        @include make-col($_grid-items-per-row-m);
+                        margin: $_grid-item-margin-m;
+                    }
+
+                    @include min-screen($screen__l) {
+                        @include make-col($_grid-items-per-row-l);
+                    }
+                }
+            }
+        }
+    }
+}

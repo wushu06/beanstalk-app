@@ -1,0 +1,30 @@
+.webforms {
+
+    .form {
+
+        .actions-toolbar,
+        .field {
+            padding: 0;
+        }
+
+        .fieldset {
+            padding: 0 15px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+        .actions-toolbar {
+            clear: both;
+            text-align: right;
+            padding-right: 15px;
+
+            > .primary {
+                float: none;
+            }
+        }
+    }
+
+    .webforms-field {
+        float: none;
+    }
+}

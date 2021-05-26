@@ -1,0 +1,17 @@
+.pages {
+    @include lib-pager();
+
+    .action {
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+
+        &.previous {
+            margin-right: 0;
+        }
+
+        &.next {
+            margin-left: 0;
+        }
+    }
+}

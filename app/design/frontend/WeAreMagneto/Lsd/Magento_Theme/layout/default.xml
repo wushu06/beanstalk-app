@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="Magento\Framework\View\Element\Text" name="fonts.gstatic.preconnect">
+                <arguments>
+                    <argument name="text" xsi:type="string"><![CDATA[<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />]]></argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

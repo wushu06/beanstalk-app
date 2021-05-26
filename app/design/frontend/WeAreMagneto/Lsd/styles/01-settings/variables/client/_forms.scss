@@ -1,0 +1,36 @@
+//
+//  Form variables
+//  _____________________________________________
+
+//
+//  Form elements inputs default variables
+//  ---------------------------------------------
+
+$form-element-input__height                         : 56px;
+
+//
+//  Field
+//  ---------------------------------------------
+
+//  Form field label asterisk
+$form-field-label-asterisk__color                   : $text__color;
+
+//
+//  Input-text
+//  ---------------------------------------------
+
+$input-text__height                                 : $form-element-input__height;
+$input-text__border                                 : 1px solid $color-gray-01;
+
+//
+//  Select
+//  ---------------------------------------------
+
+$select__background                             : $color-white;
+$select__border                                 : 1px solid $color-alto;
+$select__border-radius                          : 0;
+$select__height                                 : 41px;
+$select__padding                                : $indent__s 70px $indent__s $indent__base;
+$select__color                                  : $color-dark-blue;
+$select__font-weight                            : $font-weight__bold;
+$select__line-height                            : 1;

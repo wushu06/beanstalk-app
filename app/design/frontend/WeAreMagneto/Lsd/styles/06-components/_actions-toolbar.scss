@@ -1,0 +1,38 @@
+.actions-toolbar {
+    > .primary,
+    > .secondary {
+        text-align: center;
+        margin-bottom: $indent__s;
+
+        .action {
+            @extend .abs-button-responsive;
+            margin-bottom: $indent__s;
+            min-width: 120px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+//
+//  Desktop
+//  _____________________________________________
+@include min-screen($screen__m) {
+    .actions-toolbar {
+        @include lib-actions-toolbar();
+
+        > .secondary,
+        > .primary {
+            margin-bottom: 0;
+            .action {
+                margin-bottom: 0;
+                width: auto;
+            }
+        }
+    }
+}

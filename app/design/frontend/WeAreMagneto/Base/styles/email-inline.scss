@@ -1,0 +1,19 @@
+//
+//  Styles for emails
+//  _____________________________________________
+
+//  See comments in source/_email-base.scss for explanation of email styles
+
+@import '01-settings/magento-ui/variables'; // Magento UI variables
+@import '01-settings/variables/base'; // Theme variables
+@import '01-settings/variables/client'; // Client variables
+@import '01-settings/magento-ui/lib'; // Magento UI
+@import '01-settings/magento-ui/variables/email'; // Global email variables
+
+@import '06-components/email-base-inline';
+@import '06-components/email-extend-inline';
+
+//  Module-specific styles for emails
+@import '../Magento_Bundle/styles/email-inline';
+@import '../Magento_Rma/styles/email-inline';
+@import '../Magento_Sales/styles/email-inline';

@@ -1,0 +1,33 @@
+//
+//  Toolbar
+//  _____________________________________________
+
+$toolbar__margin                        : 0 0 $indent__l;
+
+$sorter-label__font-size                : 14px;
+$sorter-label__margin                   : 0 $indent__s 0 0;
+
+$sorter-options__background             : $color-seashell;
+$sorter-options__border                 : 0;
+$sorter-options__color                  : rgba($color-black, 0.4);
+$sorter-options__height                 : auto;
+$sorter-options__margin                 : 0 $indent__s 0 0;
+$sorter-options__max-width              : 100px;
+$sorter-options__padding                : $indent__s;
+$sorter-options__width                  : auto;
+
+$toolbar-amount__font-size              : 14px;
+$toolbar-amount__font-weight            : $font-weight__semibold;
+
+$toolbar-filters__font-size             : 14px;
+
+$pager__border-radius                   : 50%;
+$pager__height                          : 40px;
+$pager__width                           : 40px;
+
+@import 'toolbar/toolbar';
+@import 'toolbar/sorter';
+@import 'toolbar/amount';
+@import 'toolbar/limiter';
+@import 'toolbar/filters';
+@import 'toolbar/pages';

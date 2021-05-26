@@ -1,0 +1,49 @@
+//
+//  Sidebar Modal
+//  _____________________________________________
+
+$sidebar-modal__background                 : $color-white;
+$sidebar-modal__padding                    : $indent__base;
+$sidebar-modal__transition                 : all 0.3s ease-in-out;
+$sidebar-modal__width                      : 300px;
+
+$sidebar-modal-overlay__background         : rgba($color-dark-blue, 0.3);
+
+@include max-screen($screen__m) {
+    .page-with-filter {
+        &.show-filter {
+            &:after {
+                background: $sidebar-modal-overlay__background;
+                content: "";
+                position: fixed;
+                top: 0;
+                right: $sidebar-modal__width;
+                bottom: 0;
+                left: 0;
+                z-index: 1000;
+            }
+
+            .columns {
+                .sidebar-main {
+                    right: 0;
+                }
+            }
+        }
+
+        .columns {
+            .sidebar-main {
+                @include lib-vendor-prefix-order(0);
+                background: $sidebar-modal__background;
+                padding: $sidebar-modal__padding;
+                position: fixed;
+                top: 0;
+                transition: $sidebar-modal__transition;
+                bottom: 0;
+                right: -100%;
+                overflow-y: scroll;
+                width: $sidebar-modal__width;
+                z-index: 2000;
+            }
+        }
+    }
+}

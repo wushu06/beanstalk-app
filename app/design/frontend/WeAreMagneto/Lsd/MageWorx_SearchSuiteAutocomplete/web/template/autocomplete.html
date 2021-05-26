@@ -1,0 +1,44 @@
+<div id="searchsuite-autocomplete" class="searchsuite-autocomplete" data-bind="visible: showPopup()">
+    <div class="searchsuite-autocomplete__results" data-bind="visible: anyResultCount()">
+        <div class="searchsuite-autocomplete__suggest" data-bind="visible: result.suggest.data().length > 0">
+            <div class="searchsuite-autocomplete__title"><!-- ko i18n: 'Suggested'--><!-- /ko --></div>
+            <ul id="suggest" class="searchsuite-autocomplete__suggest-list" role="listbox" data-bind="foreach: result.suggest.data">
+                <li class="searchsuite-autocomplete__suggest-item">
+                    <a data-bind="attr: { href: url, title: title }">
+                        <span data-bind="text: title"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="searchsuite-autocomplete__products" data-bind="visible: result.product.data().length > 0">
+            <div class="searchsuite-autocomplete__title">
+                <!-- ko i18n: 'Products'--><!-- /ko -->
+                <a class="see-all" data-bind="attr: {href: result.product.url}">
+                    <!-- ko i18n: 'See All' --><!-- /ko -->
+                    <span data-bind="text: result.product.size"></span>
+                </a>
+            </div>
+            <ul id="product" class="searchsuite-autocomplete__products-list" role="listbox" data-bind="foreach: result.product.data">
+                <li class="searchsuite-autocomplete__products-item">
+                    <div class="qs-option-image" data-bind="visible: image">
+                        <a data-bind="attr: { href: url, title: name }">
+                            <img data-bind="attr: { src: image, title: name }" />
+                        </a>
+                    </div>
+                    <div class="qs-option-info" data-bind="css: {noimage: !image}">
+                        <div class="qs-option-title" data-bind="visible: name">
+                            <a data-bind="attr: { href: url, title: name }, text: name"></a>
+                        </div>
+                        <div class="qs-option-sku" data-bind="visible: sku"><!-- ko i18n: 'SKU'--><!-- /ko -->: <span data-bind="text: sku"></span></div>
+                        <div class="qs-option-price" data-bind="html: price, visible: price"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="searchsuite-autocomplete__view-all" data-bind="visible: anyResultCount()">
+        <button class="searchsuite-autocomplete__view-all-submit" type="submit"><!-- ko i18n: 'View all results'--><!-- /ko --></button>
+    </div>
+    <div class="searchsuite-autocomplete__no-result" data-bind="visible: !anyResultCount()"><!-- ko i18n: 'No Result'--><!-- /ko --></div>
+</div>

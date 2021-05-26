@@ -1,0 +1,28 @@
+//
+//  Buttons variables
+//  _____________________________________________
+
+$button__color                                : $color-white;
+$button__background                           : $color-laser;
+$button__border                               : 1px solid $color-laser;
+
+$button__hover__color                         : $color-white;
+$button__hover__background                    : darken($color-laser, 5%);
+$button__hover__border                        : 1px solid darken($color-laser, 5%);
+
+$button-primary__color                        : $color-white;
+$button-primary__background                   : $color-laser;
+$button-primary__border                       : 1px solid $color-laser;
+
+$button-primary__hover__color                 : $color-white;
+$button-primary__hover__background            : darken($color-laser, 5%);
+$button-primary__hover__border                : 1px solid darken($color-laser, 5%);
+
+$button-primary__active__color                : $button-primary__hover__color;
+$button-primary__active__background           : $button-primary__hover__background;
+$button-primary__active__border               : $button-primary__hover__border;
+
+$button__border-radius                        : 0;
+$button__font-size                            : 16px;
+$button__font-weight                          : 600;
+$button-primary__padding                      : 16px 15px;

@@ -1,0 +1,33 @@
+//
+//  Typography variables
+//  _____________________________________________
+
+$font-family-name__base         : 'Manrope';
+$font-family-name__serif        : 'Playfair Display';
+$font-family__sans-serif        : Arial, sans-serif;
+
+$font-family__base              : $font-family-name__base, $font-family__sans-serif;
+$font-family__serif             : $font-family-name__serif, 'Times New Roman', Times, serif;
+$font-size-ratio__base          : 1.6;
+
+$h1__font-family                : $font-family__serif;
+$h1__font-weight                : 700;
+$h1__line-height                : 1;
+
+$input-text__font-size: 16px;
+
+//
+//  Links
+//  ---------------------------------------------
+
+$text__color                    : $color-dark-blue;
+$link__color                    : $color-dark-blue;
+$link__hover__color             : $color-dark-blue;
+$link__visited__color           : $color-dark-blue;
+
+//
+//  Form
+//  ---------------------------------------------
+
+$input-text__font-family        : $font-family__base;
+$button__font-family            : $font-family__base;

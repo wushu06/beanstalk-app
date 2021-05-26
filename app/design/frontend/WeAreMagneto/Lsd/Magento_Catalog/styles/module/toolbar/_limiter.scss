@@ -1,0 +1,21 @@
+//
+//  Limiter
+//  _____________________________________________
+
+.field.limiter {
+    align-items: center;
+    display: none;
+
+    .label {
+        display: none;
+    }
+
+    .control {
+        margin-right: $indent__base;
+    }
+
+    .limiter-text {
+        font-size: 14px;
+        font-weight: $font-weight__bold;
+    }
+}

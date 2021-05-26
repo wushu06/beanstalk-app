@@ -1,0 +1,15 @@
+{
+  "theme-base": {
+    "src": "app/design/frontend/WeAreMagneto/Base",
+    "dest": "pub/static/frontend/WeAreMagneto/Base",
+    "locale": ["en_GB"],
+    "ignore": [".test"]
+  },
+  "theme-lsd": {
+    "src": "app/design/frontend/WeAreMagneto/Lsd",
+    "dest": "pub/static/frontend/WeAreMagneto/Lsd",
+    "locale": ["en_GB"],
+    "ignore": [".test"],
+    "parent": "theme-base"
+  }
+}

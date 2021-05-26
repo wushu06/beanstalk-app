@@ -1,0 +1,25 @@
+.fotorama__arr__arr {
+    .fotorama__arr & {
+        @extend .fotorama-sprite;
+        width: $size-fotorama-block;
+        height: $size-fotorama-block;
+        @include fotorama-abs-center();
+
+        .ie9 & {
+            margin: (-$size-fotorama-block / 2) 0 0 (-$size-fotorama-block / 2);
+        }
+    }
+
+    .fotorama__arr--prev & {
+        background-image: url('../images/icons/arrow-left.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .fotorama__arr--next & {
+        background-image: url('../images/icons/arrow-right.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+

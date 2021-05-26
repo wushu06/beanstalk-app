@@ -1,0 +1,83 @@
+Summary,Summary
+"Account Dashboard","Account Dashboard"
+"Account Information","Account Information"
+"Address Book","Address Book"
+Menu,Menu
+Account,Account
+Settings,Settings
+Customer Login,Login or Create an Account
+Forgot Your Password?,Forgotten Password?
+Starting at,From
+Apply Discount Code,Coupon Code
+Enter discount code,Coupon Code
+Apply Discount,Apply
+Cancel Coupon,Cancel
+Estimate Shipping and Tax,Estimate Shipping,
+Add to Wish List,wishlist
+Add to Compare,Compare
+My Cart,Basket
+Shopping Cart,Basket
+"Notify me when this product is in stock","Notify me"
+Add to Cart,Add to Basket
+Adding...,Adding to Basket
+View Product,Add to Basket
+"Shopping Cart","Basket"
+"My Cart (1 item)","My Basket (1 item)"
+"My Cart (%1 items)","My Basket (%1 items)"
+"My Cart","My Basket"
+"You added %1 to your shopping cart.","You added %1 to your shopping basket."
+"We can't add this item to your shopping cart right now.","We can't add this item to your shopping basket right now."
+"%1 was updated in your shopping cart.","%1 was updated in your shopping basket."
+"We can't update the shopping cart.","We can't update the shopping basket."
+"Display number of items in cart","Display number of items in basket"
+"Shipping method is not applicable for empty cart","Shipping method is not applicable for empty basket"
+"Totals calculation is not applicable to empty cart","Totals calculation is not applicable to empty basket"
+"Shopping Cart Items","Shopping Basket Items"
+"Clear Shopping Cart","Clear Basket"
+"Update Shopping Cart","Update Basket"
+"Update Cart","Update Basket"
+"You have no items in your shopping cart.","You have no items in your shopping basket."
+"Cart Subtotal","Subtotal"
+"Edit Your Cart","Edit Your Basket"
+"View and Edit Cart","View and Edit Basket"
+"Are you sure you would like to remove this item from the shopping cart?","Are you sure you would like to remove this item from the shopping basket?"
+"After Adding a Product Redirect to Shopping Cart","After Adding a Product Redirect to Shopping Basket"
+"My Cart Link","My Basket Link"
+"Display Cart Summary","Display Basket Summary"
+"Shopping Cart Sidebar","Shopping Basket Sidebar"
+"Display Shopping Cart Sidebar","Display Shopping Basket Sidebar"
+"Item in Cart","Item in Basket"
+"Items in Cart","Items in Basket"
+"Show Cross-sell Items in the Shopping Cart","Show Cross-sell Items in the Shopping Basket"
+"You added %1 to your <a href=""%2"">shopping cart</a>.","You added %1 to your <a href=""%2"">shopping basket</a>."
+"Excl. tax","Excl. VAT"
+"Incl. tax","Incl. VAT"
+"Excl. Tax","Excl. VAT"
+"Incl. Tax","Incl. VAT"
+"Ship Here","Select"
+"Ship here","Select"
+"Once your package ships we will send an email with a link to track your order.",""
+"The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.","Incorrect username or password, please try again.",
+"Related Products","People also bought",
+"HTML Sitemap","Sitemap"
+"Out of stock","Stock Arriving Soon"
+"My billing and shipping address are the same","Billing & Shipping are the same"
+"has been added to your cart","has been added to your basket"
+"Items Ordered","Order"
+"Order Shipments","Shipments"
+"Check Gift Card status","Check Gift Card Status"
+ADD TO CART,Add to Basket
+ADD TO CART,Add to Basket
+Search results for: '%1',Results: '%1'
+"Be the first to review this product","Be first to review"
+Proceed to Checkout,Checkout
+Continue Shopping,Continue
+Shipping,Shipping Details
+Remove item,Remove
+Related Articles,Blog
+Thank you for your purchase!,Thank You For Your Order
+Order Summary,Summary
+More Information,Technical Specifications
+Additional Address Entries,Additional Addresses,
+Zip/Postal Code,Postcode
+Add Your Review,Write Review

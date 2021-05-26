@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.top">
+            <block name="catalog.header" template="Magento_Catalog::catalog-header.phtml" />
+        </referenceContainer>
+
+        <move element="breadcrumbs" destination="catalog.header" />
+        <move element="page.main.title" destination="catalog.header" after="breadcrumbs" />
+        <move element="category.description" destination="catalog.header" after="page.main.title" />
+        <move element="category.image" destination="catalog.header" after="category.description" />
+        <move element="category.cms" destination="page.bottom.container" after="-" />
+    </body>
+</page>

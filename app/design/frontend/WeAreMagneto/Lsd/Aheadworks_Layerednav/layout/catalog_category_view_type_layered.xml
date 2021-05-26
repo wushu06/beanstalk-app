@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="catalog.leftnav">
+			<block class="Aheadworks\Layerednav\Block\SelectedFilters"
+				name="modal.aw-ln.selected_filters"
+				template="Aheadworks_Layerednav::layer/selected_filters.phtml">
+				<arguments>
+					<argument name="view_model" xsi:type="object">Aheadworks\Layerednav\ViewModel\SelectedFilters</argument>
+				</arguments>
+				<block class="Aheadworks\Layerednav\Block\Filter\Item\Renderer"
+					name="modal.aw-ln.selected_filters.renderer"
+					as="renderer"
+					template="Aheadworks_Layerednav::layer/filter/item/view.phtml">
+					<arguments>
+						<argument name="view_model" xsi:type="object">Aheadworks\Layerednav\ViewModel\SelectedFilters\FilterItemRenderer</argument>
+					</arguments>
+					<block class="Aheadworks\Layerednav\Block\Filter\Item\Renderer"
+						name="modal.aw-ln.selected_filters.renderer.default"
+						as="default"
+						template="Aheadworks_Layerednav::layer/filter/item/renderer/default.phtml">
+						<arguments>
+							<argument name="view_model" xsi:type="object">Aheadworks\Layerednav\ViewModel\SelectedFilters\FilterItemRenderer\DefaultRenderer</argument>
+						</arguments>
+					</block>
+					<block class="Aheadworks\Layerednav\Block\Filter\Item\Renderer"
+						name="modal.aw-ln.selected_filters.renderer.numeric.manual"
+						as="numeric_manual"
+						template="Aheadworks_Layerednav::layer/filter/item/renderer/default.phtml">
+						<arguments>
+							<argument name="view_model" xsi:type="object">Aheadworks\Layerednav\ViewModel\SelectedFilters\FilterItemRenderer\NumericRenderer</argument>
+						</arguments>
+					</block>
+				</block>
+			</block>
+		</referenceBlock>
+
+        <move element="sidebar.actions" destination="sidebar.main" before="-" />
+	</body>
+</page>

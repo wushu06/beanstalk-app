@@ -1,0 +1,12 @@
+.block-tile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    .tile-qty__header {
+        margin-bottom: 5px;
+    }
+}
+.tile-wastage {
+    margin-top: 10px;
+}

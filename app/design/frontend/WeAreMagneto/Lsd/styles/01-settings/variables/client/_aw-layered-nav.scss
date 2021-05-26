@@ -1,0 +1,19 @@
+//
+//  AheadWorks Layered Navigation Variables
+//  _____________________________________________
+
+// Slider range (available range)
+$aw-range-slider-background            : $color-alto;
+
+// Slider range (selected range)
+$range-slider-background               : $color-laser;
+
+// Slider handle
+$range-slider-handle-background        : $color-laser;
+
+// Filter arrows
+$filter-arrow-image                    : "../images/icons/plus.svg";
+$filter-arrow-image-hover              : $filter-arrow-image;
+
+$filter-arrow-active-image             : "../images/icons/minus.svg";
+$filter-arrow-active-image-hover       : $filter-arrow-active-image;

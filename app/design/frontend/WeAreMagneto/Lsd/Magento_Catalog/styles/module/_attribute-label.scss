@@ -1,0 +1,14 @@
+//
+//  Attribute Label
+//  _____________________________________________
+
+$attribute-label__font-size             : 11px;
+$attribute-label__font-weight           : $font-weight__bold;
+$attribute-label__margin                : 0 0 0 $indent__xs;
+
+.attribute-label {
+    @include lib-font-size($attribute-label__font-size);
+    display: inline-block;
+    font-weight: $attribute-label__font-weight;
+    margin: $attribute-label__margin;
+}

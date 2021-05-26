@@ -1,0 +1,14 @@
+//
+//  Toolbar Pages
+//  _____________________________________________
+
+.toolbar .pages {
+    display: none;
+}
+
+.pages .page {
+    border-radius: $pager__border-radius;
+    height: $pager__height;
+    text-align: center;
+    width: $pager__width;
+}

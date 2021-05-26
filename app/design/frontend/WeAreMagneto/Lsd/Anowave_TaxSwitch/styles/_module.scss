@@ -1,0 +1,127 @@
+.price-including-tax,
+[data-label="Excl. vat"],
+[data-label="Incl. vat"],
+[data-label="Excl. VAT"],
+[data-label="Incl. VAT"] {
+    &::after {
+        @include lib-font-size(11);
+        content: ' ' attr(data-label);
+        font-weight: $font-weight__bold;
+        margin: 0 $indent__xs;
+    }
+}
+
+.tax-switcher {
+    @include media-breakpoint-up(md) {
+        float: right;
+        margin-left: 20px;
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__label,
+    &__toggle {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__label {
+        @include lib-font-size(12);
+        font-weight: $font-weight__semibold;
+        text-transform: uppercase;
+        color: $color-white;
+    }
+
+    &__toggle {
+        position: relative;
+        height: 11px;
+        width: 19px;
+        margin: 0 4px;
+        padding: 0;
+        border-radius: 24px;
+        background: transparent;
+        border: 1px solid $color-white;
+        line-height: 0;
+
+        &.active,
+        &:hover,
+        &:focus {
+            background: transparent;
+            border: 1px solid $color-white;
+        }
+
+        span {
+            @include abs-visually-hidden();
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -8px;
+            height: 9px;
+            width: 10px;
+            border-radius: 8px;
+            background-color: $color-white;
+            transition: transform 0.125s linear;
+        }
+
+        &.inc_selected {
+            &:before {
+                transform: translateX(-2px);
+            }
+
+            &:hover,
+            &:focus {
+                &:before {
+                    transform: translateX(7px);
+                }
+            }
+        }
+
+        &.exc_selected {
+            &:before {
+                transform: translateX(7px);
+            }
+
+            &:hover,
+            &:focus {
+                &:before {
+                    transform: translateX(-2px);
+                }
+            }
+        }
+    }
+
+    //
+    // Desktop
+    //
+    @include min-screen($screen__m) {
+        &__label {
+            color: $text__color;
+        }
+
+        &__toggle {
+            border-color: $text__color;
+
+            &.active,
+            &:hover,
+            &:focus {
+                border-color: $text__color;
+            }
+        }
+
+        &__toggle {
+            &:before {
+                background-color: $text__color;
+            }
+        }
+    }
+}

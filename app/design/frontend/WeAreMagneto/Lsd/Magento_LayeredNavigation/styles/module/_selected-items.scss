@@ -1,0 +1,97 @@
+.selected-items-list {
+    @include lib-list-reset-styles();
+    display: none;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    @include min-screen($screen__m) {
+        display: flex;
+        border-bottom: 1px solid $color-alto;
+        margin-bottom: 15px;
+    }
+
+    .selected-item {
+        background: $color-white;
+        border: 1px solid $color-alto;
+        border-radius: 3px;
+        font-size: $font-size__xs;
+        font-weight: $font-weight__bold;
+        margin: 0 $indent__base $indent__base 0;
+        padding: 9px;
+
+        @include min-screen($screen__m) {
+            margin-bottom: 15px;
+        }
+
+        // clear all
+        &:last-of-type {
+            border: 0;
+            padding: 0;
+
+            a {
+                @include lib-link(
+                    $_link-color                   : $color-chalice,
+                    $_link-text-decoration         : none,
+                    $_link-color-visited           : $color-chalice,
+                    $_link-text-decoration-visited : none,
+                    $_link-color-hover             : $color-dark-blue,
+                    $_link-color-active            : $color-dark-blue
+                );
+            }
+        }
+
+        > span {
+            display: inline-block;
+            margin-right: $indent__s;
+        }
+
+        > button {
+            @include lib-link-as-button();
+            background: none;
+            border: 0;
+            border-radius: 0;
+            padding: 0 3px;
+            position: relative;
+            min-width: 15px;
+
+            &:before {
+                background: url('../images/icons/close.svg') center center no-repeat;
+                background-size: cover;
+                content: "";
+                display: inline-block;
+                height: 9px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                width: 9px;
+            }
+        }
+    }
+}
+
+.block.filter {
+    .selected-items-list {
+        background: $color-alto;
+        border: 0;
+        display: none;
+        flex-wrap: nowrap;
+        padding: $indent__s;
+        overflow-x: scroll;
+
+        @include max-screen($screen__m) {
+            display: flex;
+        }
+
+        .selected-item {
+            margin: 0 $indent__s 0 0;
+            white-space: nowrap;
+
+            &:last-of-type {
+                background: none;
+                padding-right: $indent__s;
+            }
+        }
+    }
+}

@@ -1,0 +1,618 @@
+//
+//  Theme variables
+//  _____________________________________________
+
+//  Messages
+$message-global-note__background           : $color-yellow-light2 !default;
+$message-global-note__border-color         : $color-yellow-light3 !default;
+$message-global-note__color                : $text__color !default;
+
+$message-global-note-link__color           : $link__color !default;
+$message-global-note-link__color-hover     : $link__hover__color !default;
+$message-global-note-link__color-active    : $link__active__color !default;
+
+$message-global-caution__background        : $color-red9 !default;
+$message-global-caution__border-color      : none !default;
+$message-global-caution__color             : $color-white !default;
+
+$message-global-caution-link__color        : $link__color !default;
+$message-global-caution-link__color-hover  : $link__hover__color !default;
+$message-global-caution-link__color-active : $link__active__color !default;
+
+//  Header
+$header__background-color                  : false !default;
+$header-icons-color                        : $color-gray56 !default;
+$header-icons-color-hover                  : $color-gray20 !default;
+
+$addto-color                               : $text__color__muted !default;
+$addto-hover-color                         : $primary__color !default;
+
+$minicart-icons-color                      : $header-icons-color !default;
+$minicart-icons-color-hover                : $header-icons-color-hover !default;
+
+$button__shadow                            : inset 0 2px 1px rgba(0, 0, 0, 0.12) !default;
+
+$h1__margin-bottom__desktop                : $indent__xl !default;
+
+//  Footer
+$footer__background-color                  : false !default;
+
+
+body {
+    @include lib-css(background-color, $page__background-color);
+}
+
+//
+//  Header
+//  ---------------------------------------------
+
+.page-header {
+    @include lib-css(background-color, $header__background-color);
+    margin-bottom: $indent__base;
+
+    .header.panel {
+        background: #1f2526;
+    }
+
+    //
+    // Desktop
+    //
+    @include min-screen($screen__m) {
+        .header.panel {
+            background: transparent;
+        }
+    }
+}
+
+.header {
+    &.content {
+        @extend .abs-add-clearfix;
+        padding-top: $indent__s;
+        position: relative;
+    }
+}
+
+.logo {
+    display: block;
+    width: 257px;
+    margin: 0 auto;
+
+    img {
+        display: block;
+    }
+
+    .page-print & {
+        float: none;
+    }
+
+    //
+    // Mobile
+    //
+    @include max-screen($screen__m) {
+        margin: 15px 0 0 55px;
+        max-width: 45%;
+        width: 173px;
+    }
+}
+
+.page-main {
+    > .page-title-wrapper {
+        .page-title + .action {
+            margin-top: $indent__l;
+        }
+    }
+}
+
+.action.skip {
+    &:not(:focus) {
+        @extend .abs-visually-hidden;
+    }
+
+    &:focus {
+        @include lib-css(background, $color-gray94);
+        @include lib-css(padding, $indent__s);
+        box-sizing: border-box;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        z-index: 15;
+    }
+}
+
+.action-skip-wrapper {
+    height: 0;
+    position: relative;
+}
+
+//
+//  Global notice
+//  ---------------------------------------------
+
+.message.global {
+    p {
+        margin: 0;
+    }
+
+    &.noscript,
+    &.cookie {
+        @include lib-message($_message-type: global-note);
+        margin: 0;
+    }
+
+    &.cookie {
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        z-index: 3;
+
+        .actions {
+            margin-top: $indent__s;
+        }
+    }
+
+    &.demo {
+        @include lib-message($_message-type: global-caution);
+        margin-bottom: 0;
+        text-align: center;
+    }
+}
+
+//
+//  Footer
+//  ---------------------------------------------
+
+.page-footer {
+    @include lib-css(background-color, $footer__background-color);
+    margin-top: auto;
+}
+
+.footer {
+    &.content {
+        margin-top: 25px;
+        padding-bottom: 15px;
+        padding-top: 25px;
+
+        .links {
+            > li {
+                margin: 0 0 8px;
+            }
+        }
+
+        .switcher-store {
+            margin: 0 0 30px;
+        }
+    }
+
+    .copyright,
+    .bugs {
+        @include lib-font-size(12);
+        display: block;
+    }
+}
+
+.page-header,
+.page-footer {
+    .switcher {
+        margin-right: 10px;
+
+        .options {
+            @include lib-dropdown(
+                $_dropdown-actions-padding            : 0,
+                $_dropdown-list-item-padding          : 0,
+                $_dropdown-toggle-icon-content        : $icon-down,
+                $_dropdown-toggle-active-icon-content : $icon-up,
+                $_icon-font-text-hide                 : true,
+                $_icon-font-size                      : 22px,
+                $_icon-font-line-height               : 22px,
+                $_dropdown-list-min-width             : 160px
+            );
+
+            ul.dropdown {
+                a {
+                    display: block;
+                    padding: 8px;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        li {
+            font-size: $font-size__s;
+            margin: 0;
+        }
+
+        .label {
+            @extend .abs-visually-hidden;
+        }
+
+        strong {
+            font-weight: $font-weight__regular;
+        }
+    }
+}
+
+//
+//  Widgets
+//  ---------------------------------------------
+
+.sidebar {
+    .widget.block:not(:last-child),
+    .widget:not(:last-child) {
+        @extend .abs-margin-for-blocks-and-widgets;
+    }
+}
+
+.widget {
+    clear: both;
+
+    .block-title {
+        @extend .abs-block-title;
+    }
+}
+
+.page-header,
+.page-footer {
+    .widget.block {
+        @include lib-css(margin, $indent__base 0);
+    }
+}
+
+.no-display {
+    @extend .abs-no-display;
+}
+
+//
+//  Calendar
+//  ---------------------------------------------
+
+.ui-datepicker {
+    td {
+        padding: 0;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+@include min-screen($screen__m) {
+    $_header-height: 139px;
+
+    html,
+    body {
+        height: 100%; // Stretch screen area for sticky footer
+    }
+
+    .page-wrapper {
+        @include lib-vendor-prefix-display(flex);
+        @include lib-vendor-prefix-flex-direction(column);
+        min-height: 100%; // Stretch content area for sticky footer
+        padding-top: $_header-height;
+
+        > .breadcrumbs,
+        > .top-container,
+        > .widget {
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .ie10 &,
+        .ie11 & {
+            height: 100%;
+        }
+    }
+
+    .page-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $_header-height;
+        border: 0;
+        margin-bottom: 0;
+
+        .header.panel {
+            @extend .abs-add-clearfix-desktop;
+            display: flex;
+        }
+
+        .switcher {
+            display: inline-block;
+        }
+    }
+
+    .navigation ul {
+        padding: 0 8px;
+    }
+
+    .header {
+        &.panel {
+            > .header.links {
+                float: right;
+                font-size: 0;
+                @include lib-list-inline();
+                margin-left: auto;
+
+                > li {
+                    font-size: $font-size__base;
+                    margin: 0 0 0 15px;
+
+                    &.welcome,
+                    a {
+                        line-height: 1.4;
+                    }
+
+                    &.welcome {
+                        a {
+                            @include lib-css(padding-left, $indent__xs);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.content {
+            @extend .abs-add-clearfix-desktop;
+            padding: 25px 20px 10px;
+        }
+    }
+
+    .page-main {
+        > .page-title-wrapper {
+            .page-title {
+                display: inline-block;
+            }
+
+            .page-title + .action {
+                float: right;
+                margin-top: $indent__base;
+            }
+        }
+    }
+
+    .logo {
+        img {
+            max-height: inherit;
+        }
+    }
+
+    .footer {
+        &.content {
+            .links {
+                display: inline-block;
+                margin-bottom: 20px;
+                padding: 0 50px 0 0;
+                vertical-align: top;
+            }
+
+            .switcher.store {
+                display: inline-block;
+                padding-right: 50px;
+                vertical-align: top;
+            }
+        }
+
+        .copyright {
+            @extend .abs-add-clearfix-desktop;
+        }
+    }
+}
+
+.header-links {
+    @include lib-font-size(12);
+    flex-grow: 1;
+
+    > ul {
+        @include lib-list-reset-styles();
+
+        > li {
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 0;
+        }
+    }
+
+    .klarna-logo {
+        background: url('../images/icons/klarna-logo.svg') 3px 3px no-repeat transparent;
+        display: inline-block;
+        height: 14px;
+        width: 40px;
+        text-indent: -999em;
+        background-size: contain;
+    }
+
+    //
+    //  Mobile
+    //
+    @include max-screen($screen__m) {
+        .delivery {
+            display: none;
+        }
+
+        a {
+            color: $color-white;
+        }
+
+        .klarna-logo {
+            background-image: url('../images/icons/klarna-logo-white.svg');
+        }
+    }
+}
+
+.header-trustpilot {
+    display: none;
+
+    > p {
+        margin: 0;
+    }
+
+    @include min-screen(830px) {
+        @include lib-font-size(12);
+        display: block;
+        padding-left: 142px;
+        box-sizing: content-box;
+        background: url('../images/trustpilot-header-dark.png') 0 0 no-repeat transparent;
+        background-size: contain;
+        height: 15px;
+    }
+}
+
+.header-actions {
+    position: absolute;
+    top: 17px;
+    right: 20px;
+
+    &__text {
+        @include lib-visually-hidden();
+    }
+
+    &__account,
+    &__search {
+        cursor: pointer;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        margin-right: 3px;
+    }
+
+    &__account {
+        background: url('../images/icons/user-icon.svg') 50% 50% no-repeat transparent;
+        background-size: 15px;
+    }
+
+    &__search {
+        background: url('../images/icons/search-icon.svg') 5px 5px no-repeat transparent;
+        background-size: 15px;
+    }
+
+    //
+    // Desktop
+    //
+    @include min-screen($screen__m) {
+        top: 20px;
+
+        &__account,
+        &__search {
+            margin-right: 9px;
+        }
+
+        &__account {
+            background-size: 18px;
+        }
+
+        &__search {
+            background-position: 1px 3px;
+            background-size: 19px;
+        }
+    }
+}
+
+.footer-social {
+    text-align: center;
+
+    &__logo {
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        @include lib-font-size(24);
+        font-family: $font-family__serif;
+        font-weight: 700;
+        margin-bottom: 35px;
+
+        > em {
+            @include squiggle(1);
+            font-style: italic;
+        }
+    }
+
+    &__list {
+        padding: 0;
+        margin: 0 0 20px;
+        list-style: none;
+    }
+
+    &__item {
+        display: inline-block;
+        margin: 0 6px;
+    }
+}
+
+.footer-links {
+    @include make-row();
+
+    &__col {
+        @include make-col-ready();
+        @include make-col(6);
+        margin-bottom: 15px;
+    }
+
+    //
+    // Desktop
+    //
+    @include min-screen($screen__m) {
+        margin-bottom: 100px;
+
+        &__col {
+            @include make-col(3);
+        }
+    }
+}
+
+.footer-bottom {
+    @include lib-font-size(12);
+
+    &__links-container {
+        border-top: 1px solid $footer-bottom__border-color;
+        border-bottom: 1px solid $footer-bottom__border-color;
+        padding: 20px 0 17px;
+        margin-bottom: 20px;
+    }
+
+    &__tagline {
+        margin-bottom: 14px;
+    }
+
+    &__tagline,
+    &__copyright {
+        text-align: center;
+    }
+
+    //
+    // Desktop
+    //
+    @include min-screen($screen__m) {
+        display: flex;
+        flex-direction: row;
+        border-top: 1px solid $footer-bottom__border-color;
+        padding-top: 14px;
+
+        &__links-container {
+            flex-grow: 1;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        &__tagline {
+            order: 999;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            margin-bottom: 0;
+        }
+
+        &__copyright {
+            padding-top: 7px;
+            padding-right: 10px;
+            margin-right: 10px;
+            border-right: 1px solid $footer-bottom__border-color;
+        }
+    }
+}

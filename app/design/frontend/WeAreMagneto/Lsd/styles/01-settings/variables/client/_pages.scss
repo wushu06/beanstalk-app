@@ -1,0 +1,52 @@
+//
+//  Pager variables
+//  _____________________________________________
+
+$pager__font-size                            : 14px;
+$pager__font-weight                          : $font-weight__bold;
+$pager__line-height                          : 14px;
+
+$pager-item__margin                          : 0 $indent__base 0 0;
+$pager-item__padding                         : 13px;
+
+$pager-actions__padding                      : 13px;
+
+// Pager current page
+$pager-current__color                        : $color-dark-blue;
+$pager-current__border                       : 1px solid $color-laser;
+
+// Pager link default
+$pager__color                                : $color-dark-blue;
+$pager__border                               : 1px solid $color-alto;
+
+// Pager link visited
+$pager__visited__color                       : $pager__color;
+$pager__visited__border                      : $pager__border;
+
+//  Pager link hover
+$pager__hover__color                         : $pager__color;
+$pager__hover__border                        : $pager__border;
+
+//  Pager link active
+$pager__active__color                        : $pager__color;
+$pager__active__border                       : $pager__border;
+
+//  Pager link.action
+$pager-icon__font-size                       : 26px;
+
+//  Pager link.action default
+$pager-action__color                         : $color-dark-blue;
+$pager-action__border                        : 1px solid $color-alto;
+
+//  Pager link.action visited
+$pager-action__visited__color                : $pager-action__color;
+$pager-action__visited__border               : $pager-action__border;
+
+//  Pager link.action hover
+$pager-action__hover__color                  : $color-alto;
+$pager-action__hover__border                 : $pager-action__border;
+
+//  Pager link.action active
+$pager-action__active__color                 : $color-alto;
+$pager-action__active__border                : $pager-action__border;
+

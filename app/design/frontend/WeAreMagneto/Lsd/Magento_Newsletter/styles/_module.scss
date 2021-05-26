@@ -1,0 +1,82 @@
+$_newsletter-background: #49575b;
+
+.newsletter-signup {
+    background: $_newsletter-background;
+
+    &__content {
+        padding: 75px 20px;
+    }
+
+    &__text-container,
+    &__input-container {
+        text-align: center;
+    }
+
+    &__input-container {
+        position: relative;
+
+        div.mage-error {
+            position: absolute;
+            top: 55px;
+        }
+    }
+
+    &__input {
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        @include lib-font-size(25);
+        font-family: $font-family__serif;
+        font-style: italic;
+        color: $color-white;
+        margin: 0 0 30px;
+        display: block;
+    }
+
+    &__button {
+        white-space: nowrap;
+    }
+
+    //
+    // Desktop
+    //
+    @include min-screen($screen__m) {
+        &__content {
+            max-width: $layout__max-width;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        &__content-inner {
+            @include make-row();
+        }
+
+        &__text-container,
+        &__form-container {
+            @include make-col-ready();
+            text-align: left;
+        }
+
+        &__text-container {
+            @include make-col(7);
+        }
+
+        &__text {
+            padding-top: 10px;
+            margin-bottom: 0;
+        }
+
+        &__form-container {
+            @include make-col(5);
+        }
+
+        &__input-container {
+            display: flex;
+        }
+
+        &__input {
+            margin-bottom: 0;
+        }
+    }
+}
